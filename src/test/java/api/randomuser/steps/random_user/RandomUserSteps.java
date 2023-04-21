@@ -1,6 +1,6 @@
-package api.randomuser.steps;
+package api.randomuser.steps.random_user;
 
-import api.randomuser.dto.ResultsModel;
+import api.randomuser.steps.CommonSteps;
 import io.qameta.allure.Step;
 
 import java.util.Map;
@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class RandomUserSteps extends CommonSteps {
 
     @Step
-    public ResultsModel getRandomUserApi(Map<String, String> queryParam) {
+    public <T> T getRandomUserApi(Map<String, String> queryParam, Class<T> tClass) {
 
         return given()
                 .log().uri()
@@ -22,6 +22,6 @@ public class RandomUserSteps extends CommonSteps {
                 .assertThat()
                 .statusCode(200)
                 .extract()
-                .as(ResultsModel.class);
+                .as(tClass);
     }
 }

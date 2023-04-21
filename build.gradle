@@ -26,9 +26,6 @@ allure {
 }
 
 dependencies {
-    testImplementation 'org.projectlombok:lombok:1.18.22'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation(
             'com.codeborne:selenide:6.12.3',
             'io.rest-assured:rest-assured:5.3.0',
@@ -39,9 +36,9 @@ dependencies {
             'org.junit.jupiter:junit-jupiter-params:5.9.2',
             "org.slf4j:slf4j-simple:$slf4jVersion",
             "com.github.javafaker:javafaker:1.0.2",
-            'org.aspectj:aspectjweaver:1.9.19'
+            'org.aspectj:aspectjweaver:1.9.19',
+            'org.projectlombok:lombok:1.18.26'
     )
-
 }
 
 tasks.withType(Test) {

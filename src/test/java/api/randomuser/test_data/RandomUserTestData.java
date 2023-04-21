@@ -7,11 +7,10 @@ import java.util.stream.Stream;
 
 public class RandomUserTestData {
 
-    public static Stream<Arguments> checkGenderRandomUser() {
-        var queryParam = Map.of("gender", "female", "nat", "US");
-        var queryParam1 = Map.of("gender", "male", "nat", "BR");
-
-        return Stream.of(Arguments.of(queryParam));
+    public static Stream<Arguments> checkRandomUser() {
+        return Stream.of(
+                Arguments.of(Map.of("gender", "female", "nat", "US")),
+                Arguments.of(Map.of("gender", "male", "nat", "BR")));
     }
 }
 
